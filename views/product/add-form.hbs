@@ -1,0 +1,68 @@
+<form action="/products/save-add" method="post" enctype="multipart/form-data" class="col-md-6 offset-md-3"
+    onsubmit="return validatedata()">
+    <h2>Thêm sản phẩm</h2>
+    <div class="form-group">
+        <label for="">Tên sản phẩm</label>
+        <input type="text" name="name" class="form-control" id="product_name">
+        <span style="color: red;" id="hName-err"></span>
+    </div>
+    <div class="form-group">
+        <label>Ảnh sản phẩm</label>
+        <input type="file" name="image" class="form-control" id="product_image">
+        <span style="color: red;" id="hImage-err"></span>
+    </div>
+    <div class="form-group">
+        <label for="">Giá sản phẩm</label>
+        <input type="number" name="price" class="form-control" id="product_giaSp">
+        <span style="color: red;" id="hGia-err"></span>
+    </div>
+    <div class="form-group">
+        <label for="">Mô tả</label>
+        <textarea name="description" id="product_moTa" cols="30" rows="5" class="form-control"></textarea>
+        <span style="color: red;" id="hMota-err"></span>
+    </div>
+    <div class="form-group text-center">
+        <button type="submit" class="btn btn-primary px-5">Thêm</button>
+        <a href="/products" class="btn btn-danger px-5">Hủy</a>
+    </div>
+
+</form>
+<script>
+
+    function validatedata() {
+        var pName = document.querySelector('#product_name').value;
+        if (pName == "") {
+            document.querySelector('#hName-err').innerText = "Vui lòng nhập tên của sản phẩm";
+            return false;
+        }
+        else {
+            document.querySelector('#hName-err').innerText = "";
+        }
+        var pName = document.querySelector('#product_image').value;
+        if (pName == "") {
+            document.querySelector('#hImage-err').innerText = "Vui lòng chọn ảnh";
+            return false;
+        }
+        else {
+            document.querySelector('#hImage-err').innerText = "";
+        }
+        var pName = document.querySelector('#product_giaSp').value;
+        if (pName == "") {
+            document.querySelector('#hGia-err').innerText = "Vui lòng nhập giá sản phẩm";
+            return false;
+        }
+        else {
+            document.querySelector('#hGia-err').innerText = "";
+        }
+        var pName = document.querySelector('#product_moTa').value;
+        if (pName == "") {
+            document.querySelector('#hMota-err').innerText = "Vui lòng nhập mô tả";
+            return false;
+        }
+        else {
+            document.querySelector('#hMota-err').innerText = "";
+        }
+
+
+    }
+</script>
